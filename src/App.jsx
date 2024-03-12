@@ -1,6 +1,7 @@
 import CreateAccountForm from "./components/CreateAccountForm";
+import Login from "./components/Login";
 import CreateAcoountSvg from "./components/svgs/CreateAcoountSvg";
-import "./styles/animation.css";
+import LoginSvg from "./components/svgs/LoginSvg";
 import { useState } from "react";
 
 function App() {
@@ -8,22 +9,36 @@ function App() {
 
   const handleFlip = () => {
     setActiveCard(!activeCard);
-    console.log(activeCard);
   };
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-t from-zinc-100 to-blue-300 flex items-center justify-center">
-      <main className={` flex w-[900px] h-4/6 rounded-lg overflow-hidden`}>
-        <div
-          className={`bg-white shadow-2xl  h-full w-full flex relative transition-all duration-500 [transform-style:preserv-3d] 
+    <div className="antialiased h-screen w-screen bg-gradient-to-t from-zinc-100 to-blue-300 flex items-center justify-center ">
+      <div
+        className={`flex w-[900px] h-4/6 rounded-lg overflow-hidden [perspective:1000px]`}
+      >
+        <main
+          className={` relative w-full h-full [transformStyle:preserve-3d] duration-700 ease-in-out 
           ${activeCard ? "[transform:rotateY(180deg)]" : ""}`}
         >
-          <CreateAccountForm flip={handleFlip} />
-          <aside className="w-1/2">
-            <CreateAcoountSvg />
-          </aside>
-        </div>
-      </main>
+          <div
+            className={`bg-white shadow-2xl h-full w-full flex absolute [backface-visibilit:hidden] `}
+          >
+            <CreateAccountForm flip={handleFlip} />
+            <aside className="w-1/2">
+              <CreateAcoountSvg />
+            </aside>
+          </div>
+          <div
+            className={`bg-white shadow-2xl h-full w-full flex [backface-visibilit:hidden]  
+            ${activeCard ? "[transform:rotateY(180deg)]" : ""}`}
+          >
+            <aside className="w-1/2">
+              <LoginSvg />
+            </aside>
+            <Login flip={handleFlip} />
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

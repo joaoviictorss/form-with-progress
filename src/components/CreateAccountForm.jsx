@@ -49,8 +49,20 @@ const CreateAccountForm = ({flip}) => {
     return progress;
   };
 
+  const createAccountSubmit = (e) => {
+    e.preventDefault()
+    alert('Formulario para criação de conta enviado!')
+    setData({
+      fullName: "",
+      email: "",
+      password: "",
+      maritalStatus: "",
+      gender: "",
+    })
+  }
+
   return (
-    <div className="form-container flex justify-center items-center w-1/2 py-8 object-cover">
+    <div className="form-container flex justify-center items-center w-1/2 py-8" onSubmit={createAccountSubmit}>
       <form className="flex flex-col gap-4 w-7/12 ">
         <h2 className="text-zinc-500 text-2xl font-bold text-center">
           Criar uma conta
@@ -73,6 +85,7 @@ const CreateAccountForm = ({flip}) => {
             className="w-full h-10 p-2 text-zinc-500 font-normal border rounded-md shadow-md focus:outline-none"
             value={data.fullName}
             onChange={handleChange}
+            autoComplete="off"
           />
         </div>
 
@@ -160,9 +173,9 @@ const CreateAccountForm = ({flip}) => {
           Criar conta
         </button>
 
-        <p className="text-center">
+        <p className="flex items-center justify-center gap-2">
           Já tem uma conta?{" "}
-          <span onClick={flip} className="text-blue-500 cursor-pointer">
+          <span onClick={flip} className="text-blue-500 cursor-pointer duration-75 hover:scale-105">
             Acesse aqui
           </span>
         </p>
