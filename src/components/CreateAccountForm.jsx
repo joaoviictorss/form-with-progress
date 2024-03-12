@@ -1,5 +1,5 @@
 import { useState } from "react";
-const CreateContForm = () => {
+const CreateAccountForm = ({flip}) => {
   const [data, setData] = useState({
     fullName: "",
     email: "",
@@ -50,7 +50,7 @@ const CreateContForm = () => {
   };
 
   return (
-    <div className="form-container flex justify-center items-center w-1/2 py-8">
+    <div className="form-container flex justify-center items-center w-1/2 py-8 object-cover">
       <form className="flex flex-col gap-4 w-7/12 ">
         <h2 className="text-zinc-500 text-2xl font-bold text-center">
           Criar uma conta
@@ -162,13 +162,13 @@ const CreateContForm = () => {
 
         <p className="text-center">
           Já tem uma conta?{" "}
-          <a href="" className="text-blue-500">
+          <span onClick={flip} className="text-blue-500 cursor-pointer">
             Acesse aqui
-          </a>
+          </span>
         </p>
       </form>
     </div>
   );
 };
 
-export default CreateContForm;
+export default CreateAccountForm;

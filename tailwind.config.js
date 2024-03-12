@@ -12,7 +12,8 @@ export default {
         'custom-w-3': '60%',
         'custom-w-4': '80%',
         'custom-w-5': '100%',
-      }
+      },
+      
 
     },
   },
