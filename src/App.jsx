@@ -14,25 +14,23 @@ function App() {
   return (
     <div className="antialiased h-screen w-screen bg-gradient-to-t from-zinc-100 to-blue-300 flex items-center justify-center ">
       <div
-        className={`flex w-[900px] h-4/6 rounded-lg overflow-hidden [perspective:1000px]`}
+        className={`flex w-[450px] sm:w-[900px] h-4/6 rounded-lg overflow-hidden [perspective:1000px] shadow-2xl`}
       >
         <main
-          className={` relative w-full h-full [transformStyle:preserve-3d] duration-700 ease-in-out 
+          className={` relative w-full h-full [transformStyle:preserve-3d] duration-700 ease-in-out
           ${activeCard ? "[transform:rotateY(180deg)]" : ""}`}
         >
-          <div
-            className={`bg-white shadow-2xl h-full w-full flex absolute [backface-visibilit:hidden] `}
-          >
+          <div className={`bg-white h-full w-full flex absolute [backface-visibilit:hidden] `} >
             <CreateAccountForm flip={handleFlip} />
-            <aside className="w-1/2">
+            <aside className="w-0 sm:block hidden sm:w-1/2">
               <CreateAcoountSvg />
             </aside>
           </div>
           <div
-            className={`bg-white shadow-2xl h-full w-full flex [backface-visibilit:hidden]  
+            className={`bg-white h-full w-full flex [backface-visibilit:hidden]
             ${activeCard ? "[transform:rotateY(180deg)]" : ""}`}
           >
-            <aside className="w-1/2">
+            <aside className="w-1/2 sm:block hidden">
               <LoginSvg />
             </aside>
             <Login flip={handleFlip} />

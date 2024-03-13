@@ -44,7 +44,7 @@ const Login = ({ flip }) => {
 
   return (
     <div
-      className="form-container flex justify-center items-center w-1/2 py-8"
+      className="form-container flex justify-center items-center py-8 sm:w-1/2 w-full"
       onSubmit={LoginSubmit}
     >
       <form className="flex flex-col gap-4 w-7/12 ">
@@ -64,6 +64,7 @@ const Login = ({ flip }) => {
             className="w-full h-10 p-2 text-zinc-500 font-normal border rounded-md shadow-md focus:outline-none"
             value={data.email}
             onChange={handleChange}
+            autoComplete="off"
           />
         </div>
 

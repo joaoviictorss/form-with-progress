@@ -62,7 +62,7 @@ const CreateAccountForm = ({flip}) => {
   }
 
   return (
-    <div className="form-container flex justify-center items-center w-1/2 py-8" onSubmit={createAccountSubmit}>
+    <div className="form-container flex justify-center items-center sm:w-1/2 w-full py-8" onSubmit={createAccountSubmit}>
       <form className="flex flex-col gap-4 w-7/12 ">
         <h2 className="text-zinc-500 text-2xl font-bold text-center">
           Criar uma conta
